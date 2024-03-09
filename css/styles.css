@@ -13030,3 +13030,9 @@ body {
 .footer {
   padding: 5rem 0;
 }
+
+.logo {
+  width: 50px;
+  margin-top: -10px;
+  margin-right: 10px;
+}
