@@ -1,50 +1,59 @@
-.carousel-item {
-  display: flex;
-  justify-content: center; /* Центрирование видео по горизонтали */
-  align-items: center; /* Центрирование видео по вертикали */
-  height: 100%; /* Установка высоты контейнера */
-  position: relative; /* Для позиционирования элементов внутри контейнера */
-}
-
-.video-container {
+.carousel-inner {
   position: relative;
-  width: 50%; /* Устанавливаем ширину видео в 50% от ширины родительского контейнера */
-  max-width: 600px; /* Максимальная ширина видео */
-  margin: 0 auto; /* Центрирование видео */
+  overflow: hidden; /* Скрывает элементы, выходящие за пределы контейнера */
 }
 
-.video-container video {
-  width: 100%; /* Видео занимает всю ширину своего контейнера */
-  height: auto; /* Автоматическая высота для сохранения пропорций */
+.carousel-item {
+  display: none; /* Скрыть все элементы по умолчанию */
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out; /* Плавное переключение */
+}
+
+.carousel-item.active {
+  display: block; /* Показать только активный элемент */
+  position: relative;
+}
+
+.carousel-item-next,
+.carousel-item-prev {
+  display: block; /* Показать элементы при переключении */
+}
+
+/* Дополнительные стили для видео */
+.video-container {
+  width: 50%; /* Устанавливаем ширину видео */
+  height: auto; /* Автоматическая высота */
+  margin: auto; /* Центрирование */
 }
 
 .carousel-control-prev,
 .carousel-control-next {
-  position: absolute; /* Абсолютное позиционирование для размещения стрелок внутри видео */
-  top: 50%; /* Центрирование стрелок по вертикали относительно контейнера */
-  transform: translateY(-50%); /* Смещение стрелок вверх на 50% их высоты */
-  width: 40px; /* Ширина стрелок */
-  height: 40px; /* Высота стрелок */
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); /* Полупрозрачный фон для лучшей видимости */
-  border-radius: 50%; /* Закругление кнопок */
-  z-index: 2; /* Видимость стрелок над видео */
-}
-
-.carousel-control-prev {
-  left: 5%; /* Расположение стрелки "Назад" внутри видео (отступ от левого края) */
-}
-
-.carousel-control-next {
-  right: 5%; /* Расположение стрелки "Вперед" внутри видео (отступ от правого края) */
+  position: absolute;
+  top: 50%; /* Центрирование стрелок */
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+  border-radius: 50%; /* Закругленные края */
+  z-index: 10; /* Обеспечение видимости над видео */
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  width: 20px; /* Размер иконок стрелок */
+  width: 20px; /* Размер иконок */
   height: 20px;
+}
+
+.carousel-control-prev {
+  left: 25px; /* Расположение стрелки слева */
+}
+
+.carousel-control-next {
+  right: 25px; /* Расположение стрелки справа */
+}
+
+/* Мобильная версия - ширина видео 100% */
+@media (max-width: 768px) {
+  .video-container {
+    width: 100%; /* На мобильных устройствах ширина видео 100% */
+  }
 }
