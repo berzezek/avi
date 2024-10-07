@@ -1,0 +1,12 @@
+.carousel-control-prev,
+.carousel-control-next {
+    width: 50px; /* Устанавливает ширину стрелок */
+    height: 50px; /* Устанавливает высоту стрелок */
+    top: 50%; /* Позиционирует стрелки по центру */
+    transform: translateY(-50%); /* Центрирует по вертикали */
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 30px;
+    height: 30px;
+}
