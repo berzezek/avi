@@ -13034,3 +13034,8 @@ body {
 .logo {
   width: 100px;
 }
+
+.logo-man {
+  width: 200px;
+  border-radius: 10px;
+}
